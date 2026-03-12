@@ -1,0 +1,28 @@
+[package]
+authors = ["Andreas Linz <klingt.net@gmail.com>"]
+description = "An OSC library for Rust"
+documentation = "https://docs.rs/rosc"
+edition = "2021"
+keywords = ["audio", "osc"]
+license = "MIT/Apache-2.0"
+name = "rosc"
+readme = "README.md"
+repository = "https://github.com/klingtnet/rosc"
+rust-version = "1.67.1"
+version = "0.11.4"
+
+[features]
+default = ["std"]
+lints = ["clippy"]
+std = ["time"]
+
+[dependencies]
+byteorder = { version = "1", default-features = false }
+clippy = { version = "^0", optional = true }
+nom = { version = "7", default-features = false, features = ["alloc"] }
+time = { version = "0.3.9", default-features = false, features = [
+    "formatting",
+], optional = true }
+
+[dev-dependencies]
+hex = { version = "0.4" }
